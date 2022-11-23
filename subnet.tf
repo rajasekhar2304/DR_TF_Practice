@@ -4,7 +4,7 @@ resource "aws_subnet" "subnet1-public" {
   availability_zone = "us-east-2a"
 
   tags = {
-    Name = "${var.public_subnet1_name}"
+    Name = "${var.vpc_name}-subnet-1"
   }
 }
 
@@ -14,7 +14,7 @@ resource "aws_subnet" "subnet2-public" {
   availability_zone = "us-east-2b"
 
   tags = {
-    Name = "${var.public_subnet2_name}"
+    Name = "${var.vpc_name}-subnet-2"
   }
 }
 
@@ -24,7 +24,7 @@ resource "aws_subnet" "subnet3-public" {
   availability_zone = "us-east-2c"
 
   tags = {
-    Name = "${var.public_subnet3_name}"
+    Name = "${var.vpc_name}-subnet-3"
   }
-
 }
+
