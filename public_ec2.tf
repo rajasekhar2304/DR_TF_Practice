@@ -1,8 +1,9 @@
 resource "aws_instance" "public_servers" {
   #count             = length(var.public_subnet_cidr_blocks) 
   #count                       = 3
-  count                       = var.env == "Dev" ? 3 : 1
-  ami                         = var.imagename
+  count = var.env == "Dev" ? 1 : 2
+  # ami                         = var.imagename
+  ami                         = lookup(var.amis, var.region)
   instance_type               = var.instance_type
   key_name                    = var.key_name
   subnet_id                   = element(aws_subnet.public-subnets.*.id, count.index)
